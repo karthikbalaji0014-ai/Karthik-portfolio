@@ -1,203 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Karthik Balaji is a software developer focused on building creative, high-impact digital experiences."
-    />
-    <title>Karthik Balaji | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a href="#home" class="brand" aria-label="Karthik Balaji home">KB</a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karthik Balaji V – Project Manager</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f5f0e8;--surface:#fffdf8;--ink:#1d2433;--muted:#5d6472;--line:#e0d8c8;--acc:#b4572f;--acc2:#1f4e5f;--hi:#efe6d6;--onacc:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151c;--surface:#1a1f29;--ink:#ece7dc;--muted:#a0a6b2;--line:#2c3340;--acc:#e08a5f;--acc2:#6fb3c7;--hi:#212837;--onacc:#12151c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151c;--surface:#1a1f29;--ink:#ece7dc;--muted:#a0a6b2;--line:#2c3340;--acc:#e08a5f;--acc2:#6fb3c7;--hi:#212837;--onacc:#12151c;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.7 Manrope,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3,.serif{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.015em}
+a{color:inherit}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav div{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:4px;padding:10px 20px;overflow-x:auto;font-size:14px;font-weight:600}
+.mono{flex:none;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:600 14px Fraunces,serif;margin-right:10px;text-decoration:none}
+nav a:not(.mono){padding:6px 12px;border-radius:999px;color:var(--muted);text-decoration:none;white-space:nowrap}
+nav a:not(.mono):hover{background:var(--hi);color:var(--ink)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+section{padding:64px 0 8px}
+.eyebrow{font:700 12px Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
+h2{font-size:clamp(1.8rem,4.5vw,2.5rem);line-height:1.15;margin:0 0 12px}
+.sub{color:var(--muted);max-width:60ch;margin:0 0 28px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:64px 0 24px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;gap:32px;padding-top:44px}}
+h1{font-size:clamp(2.5rem,7vw,4.4rem);line-height:1.04;margin:0 0 20px;font-weight:600}
+h1 em{font-style:italic;color:var(--acc)}
+.lead{font-size:1.12rem;max-width:52ch;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--onacc)}
+.btn:hover{transform:translateY(-1px)}
+.board{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 18px 40px -22px rgba(29,36,51,.35)}
+.board h3{font-size:.95rem;margin:0 0 12px;color:var(--muted);font-family:Manrope,sans-serif;font-weight:700;letter-spacing:.02em}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.col b{display:block;font:700 11px Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.tk{background:var(--hi);border-left:3px solid var(--muted);border-radius:6px;padding:8px 9px;font-size:12.5px;line-height:1.35;margin-bottom:8px}
+.col.d .tk{border-color:var(--acc2)}.col.m .tk{border-color:var(--acc)}
+@media(max-width:420px){.cols{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:24px}
+.stats div{padding:22px 16px;border-right:1px solid var(--line)}
+.stats div:last-child{border:0}
+.stats b{display:block;font:600 clamp(1.8rem,5vw,2.8rem)/1 Fraunces,serif;color:var(--acc)}
+.stats span{font-size:.88rem;color:var(--muted)}
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:760px){.two{grid-template-columns:1fr;gap:20px}}
+.steps{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none;margin:18px 0 0;counter-reset:s}
+.steps li{counter-increment:s;padding:6px 14px 6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:14px;font-weight:600}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:20px;height:20px;margin-right:8px;border-radius:50%;background:var(--acc2);color:var(--surface);font-size:11px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font-size:1.25rem;margin:0 0 6px}
+.card p{margin:0 0 14px;color:var(--muted);font-size:.96rem}
+.row{margin:10px 0;font-size:13px;font-weight:600}
+.bar{height:10px;border-radius:6px;margin-top:4px}
+.b{background:var(--line)}.a{background:var(--acc)}
+.big{font:600 2rem/1 Fraunces,serif;color:var(--acc2);margin:2px 0 6px}
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:26px}
+.job{position:relative;padding-bottom:28px}
+.job::before{content:"";position:absolute;left:-34px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--acc)}
+.job h3{font-size:1.2rem;margin:0}
+.job .when{font-size:.85rem;color:var(--muted);font-weight:600;margin:2px 0 8px}
+.job ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.97rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:6px 14px;background:var(--surface);border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600}
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:44px 32px;margin:64px 0 0;text-align:center}
+.contact h2{margin-bottom:10px}
+.contact p{color:inherit;opacity:.8;margin:0 auto 22px;max-width:46ch}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.p{background:var(--acc);border-color:var(--acc);color:var(--onacc)}
+footer{padding:28px 0 48px;text-align:center;color:var(--muted);font-size:.85rem}
+.in{animation:in .7s both}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.in{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<nav><div>
+<a class="mono" href="#top" aria-label="Top">KB</a>
+<a href="#about">About</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+</div></nav>
 
-    <main id="home">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Software Developer</p>
-            <h1>Building digital experiences that feel effortless.</h1>
-            <p class="lead">
-              Hi, I’m <strong>Karthik Balaji</strong> — a developer passionate about crafting clean,
-              user-centered solutions that blend technology, design, and performance.
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="#projects">View Projects</a>
-              <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
-            </div>
-            <ul class="mini-stats" aria-label="Key strengths">
-              <li><span>2+</span> Years Experience</li>
-              <li><span>10+</span> Projects</li>
-              <li><span>100%</span> Curious</li>
-            </ul>
-          </div>
+<main class="wrap" id="top">
+<div class="hero in">
+<div>
+<p class="eyebrow">Karthik Balaji V · Project Manager</p>
+<h1>I keep complex projects <em>calm</em>, clear and moving.</h1>
+<p class="lead">Hi, I’m Karthik. At CountAI I lead about 10 people across ML Ops, service engineering and dispatch to deliver AI-based defect detection to 65 factories. I find what slows a team down, get it fixed, and make sure it sticks.</p>
+<div class="cta"><a class="btn p" href="#contact">Let’s talk</a><a class="btn" href="#work">See my work</a></div>
+</div>
+<div class="board" aria-label="A typical project board">
+<h3>A typical delivery board</h3>
+<div class="cols">
+<div class="col"><b>Backlog</b><div class="tk">Customer change request</div><div class="tk">Model verification</div></div>
+<div class="col m"><b>In progress</b><div class="tk">Monitoring review</div><div class="tk">Sprint planning</div></div>
+<div class="col d"><b>Shipped</b><div class="tk">Troubleshooting dashboard</div><div class="tk">Training &amp; Model Hub</div></div>
+</div></div>
+</div>
 
-          <div class="hero-card" aria-label="Profile summary card">
-            <div class="avatar-ring">
-              <div class="avatar-inner">KB</div>
-            </div>
-            <h2>Developer • Problem Solver • Creator</h2>
-            <p>
-              I build responsive interfaces, scalable front-end systems, and performant user journeys
-              that help companies turn ideas into polished products.
-            </p>
-            <div class="profile-tags">
-              <span>Front-end</span>
-              <span>Web Apps</span>
-              <span>UI/UX</span>
-            </div>
-          </div>
-        </div>
-      </section>
+<div class="stats in">
+<div><b>468</b><span>machines supported</span></div>
+<div><b>65</b><span>factories</span></div>
+<div><b>~10</b><span>people led</span></div>
+<div><b>87%</b><span>less daily troubleshooting</span></div>
+</div>
 
-      <section id="about" class="section">
-        <div class="container section-head">
-          <p class="eyebrow">About Me</p>
-          <h2>Design-minded engineer with a love for solving real problems.</h2>
-        </div>
-        <div class="container about-grid">
-          <div>
-            <p>
-              I enjoy working at the intersection of code and creativity. My process focuses on
-              understanding the user, simplifying workflows, and building elegant product experiences.
-            </p>
-            <p>
-              From concept to deployment, I value clean architecture, thoughtful communication, and
-              continuous improvement. I’m especially interested in building products that are both
-              visually polished and functionally robust.
-            </p>
-          </div>
-          <div class="info-panel">
-            <h3>Currently focused on</h3>
-            <ul>
-              <li>Modern front-end development</li>
-              <li>Responsive product design</li>
-              <li>Performance and accessibility</li>
-              <li>Creative problem-solving</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+<section id="about">
+<p class="eyebrow">About</p>
+<h2>Delivery is a habit, not a status report.</h2>
+<div class="two">
+<p>I manage delivery and post-deployment support for an AI-based fabric defect-detection and real-time monitoring product, from the first task to customer handover. I work with Software, R&amp;D, ML Ops and Service teams, turn customer requests into scoped, dated tasks, and raise risks early.</p>
+<p>My background is in mechatronics engineering and production management, so I’m comfortable with engineering conversations and with the pressure of live factory floors. What I enjoy most is replacing manual, repeated work with a process that runs without me.</p>
+</div>
+<ol class="steps"><li>Identify</li><li>Define</li><li>Prioritize</li><li>Coordinate</li><li>Follow up</li><li>Validate</li><li>Adopt</li><li>Measure</li></ol>
+</section>
 
-      <section id="skills" class="section alt">
-        <div class="container section-head">
-          <p class="eyebrow">Skills</p>
-          <h2>Technologies I work with.</h2>
-        </div>
-        <div class="container skill-grid">
-          <div class="skill-card">
-            <h3>Frontend</h3>
-            <p>HTML, CSS, JavaScript, React, TypeScript, Bootstrap</p>
-          </div>
-          <div class="skill-card">
-            <h3>Backend</h3>
-            <p>Node.js, REST APIs, authentication flows, data handling</p>
-          </div>
-          <div class="skill-card">
-            <h3>Tools</h3>
-            <p>Git, GitHub, VS Code, Figma, npm, build tooling</p>
-          </div>
-          <div class="skill-card">
-            <h3>Strengths</h3>
-            <p>UI/UX thinking, debugging, collaboration, product iteration</p>
-          </div>
-        </div>
-      </section>
+<section id="work">
+<p class="eyebrow">Selected work</p>
+<h2>Three improvements I drove at CountAI.</h2>
+<p class="sub">Bar lengths compare before (grey) and after (colour) within each row.</p>
+<div class="cards">
+<div class="card">
+<h3>Troubleshooting dashboard</h3>
+<div class="big">4 h → 30 min</div>
+<p>Proposed a centralized dashboard and defined a module for false-positive and false-negative cases. About 6 people now diagnose issues without relying on engineering.</p>
+<div class="row">Daily effort<div class="bar b" style="width:100%"></div><div class="bar a" style="width:12.5%"></div></div>
+</div>
+<div class="card">
+<h3>Pipeline and monitoring automation</h3>
+<div class="big">~80% faster</div>
+<p>Found manual steps from annotation to deployment and worked with Software and R&amp;D to automate them. The team now reviews monitoring results instead of running checks by hand.</p>
+<div class="row">Model deployment, 10 → 2 min per machine<div class="bar b" style="width:100%"></div><div class="bar a" style="width:20%"></div></div>
+<div class="row">Live verification, 5–10 min → ~30 sec<div class="bar b" style="width:100%"></div><div class="bar a" style="width:7%"></div></div>
+</div>
+<div class="card">
+<h3>Training &amp; Model Hub</h3>
+<div class="big">200+ models</div>
+<p>One place for models, versions, history and machine mapping, so knowledge no longer sits with one person.</p>
+<div class="row">Finding a model, 5–15 min → under 1 min<div class="bar b" style="width:100%"></div><div class="bar a" style="width:8%"></div></div>
+</div>
+</div>
+<p class="sub" style="margin-top:22px">Team impact: validation operation reduced from 4 to 3 members on 400+ machines, and about 2 months of routine validation work without Service Engineer assistance.</p>
+</section>
 
-      <section id="projects" class="section">
-        <div class="container section-head">
-          <p class="eyebrow">Projects</p>
-          <h2>A few highlights from my work.</h2>
-        </div>
-        <div class="container project-grid">
-          <article class="project-card">
-            <div class="project-badge">Web App</div>
-            <h3>Portfolio Website</h3>
-            <p>
-              A modern personal portfolio designed to showcase projects, skills, and professional
-              identity in a clean digital format.
-            </p>
-            <ul>
-              <li>Responsive layout</li>
-              <li>Accessible components</li>
-              <li>Elegant visual system</li>
-            </ul>
-          </article>
+<section id="journey">
+<p class="eyebrow">Journey</p>
+<h2>Where I’ve worked.</h2>
+<div class="tl" style="margin-top:28px">
+<div class="job"><h3>Project Manager · CountAI</h3><div class="when">May 2024 – Present · Coimbatore</div>
+<ul><li>Own delivery and handover for an AI-based defect-detection product across 468 machines and 65 factories</li><li>Run sprint planning, stand-ups and weekly reviews for a team of about 10</li><li>Track blockers, dependencies and change requests, and report progress to management every week</li></ul></div>
+<div class="job"><h3>HR &amp; Operations Executive · CountAI</h3><div class="when">Mar 2024 – May 2024</div>
+<ul><li>Supported onboarding and recruitment during team expansion before moving into project management</li></ul></div>
+<div class="job"><h3>Management Trainee · SL Lumax</h3><div class="when">Oct 2022 – Mar 2023 · Chennai</div>
+<ul><li>Supervised production-line shifts against daily output targets and coordinated fixes for defects and downtime</li></ul></div>
+<div class="job"><h3>CAPA Analyst Intern · BULL Machines</h3><div class="when">Aug 2022 – Nov 2022 · Coimbatore</div>
+<ul><li>Root-cause analysis using CAPA, RCA and Gemba, contributing to a 30% reduction in incident recurrence</li></ul></div>
+</div>
+</section>
 
-          <article class="project-card">
-            <div class="project-badge">Product</div>
-            <h3>Dashboard Experience</h3>
-            <p>
-              Designed and implemented user-focused dashboard flows that improved clarity, speed, and
-              engagement for business operations.
-            </p>
-            <ul>
-              <li>Data visualization</li>
-              <li>Action-oriented layout</li>
-              <li>UX optimization</li>
-            </ul>
-          </article>
+<section id="skills">
+<p class="eyebrow">Skills &amp; education</p>
+<h2>What I bring.</h2>
+<div class="two" style="margin-top:20px">
+<div><h3 style="margin:0 0 10px">Delivery</h3><div class="chips"><span>Project planning</span><span>Agile / Scrum</span><span>Requirements &amp; change</span><span>Risk &amp; dependencies</span><span>Stakeholder updates</span><span>Defect triage</span></div></div>
+<div><h3 style="margin:0 0 10px">Improvement &amp; tools</h3><div class="chips"><span>RCA &amp; CAPA</span><span>Pareto analysis</span><span>Kaizen · 5S</span><span>Workflow automation</span><span>Trello</span><span>Jira-style tracking</span><span>Excel / Sheets</span></div></div>
+</div>
+<p class="sub" style="margin:26px 0 0"><b>B.E. Mechatronics Engineering</b>, K.S. Rangasamy College of Technology, 2023 · <b>IBM Mainframe Administration</b>, Arich Infotech, 2024</p>
+</section>
 
-          <article class="project-card">
-            <div class="project-badge">Creative</div>
-            <h3>Landing Pages</h3>
-            <p>
-              Built marketing and showcase landing pages focused on conversion, storytelling, and a
-              polished brand experience.
-            </p>
-            <ul>
-              <li>Conversion-focused UI</li>
-              <li>Fast-loading design</li>
-              <li>Brand consistency</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact-section">
-        <div class="container contact-wrap">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Let’s build something meaningful.</h2>
-          </div>
-          <div class="contact-box">
-            <a href="mailto:karthik@example.com">karthik@example.com</a>
-            <a href="https://github.com/karthikbalaji0014-ai" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© <span id="year"></span> Karthik Balaji</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+<div class="contact" id="contact">
+<p class="eyebrow" style="color:var(--acc)">Contact</p>
+<h2 class="serif">Looking for a project manager who ships?</h2>
+<p>I’m open to project management roles where clear ownership and cross-team delivery matter.</p>
+<a class="btn p" href="mailto:karthikbalaji0014@gmail.com">karthikbalaji0014@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/karthik-balaji-b25046397">LinkedIn</a>
+</div>
+<footer>Karthik Balaji V · Salem, Tamil Nadu, India</footer>
+</main>
+</body>
 </html>
