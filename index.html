@@ -78,17 +78,48 @@ footer{padding:28px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 .in{animation:in .7s both}
 @keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.in{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+
+body{position:relative}
+.aurora{position:absolute;inset:0 0 auto;height:720px;z-index:-1;pointer-events:none;background:radial-gradient(600px 320px at 12% 18%,color-mix(in srgb,var(--acc) 26%,transparent),transparent 70%),radial-gradient(540px 320px at 88% 8%,color-mix(in srgb,var(--acc2) 26%,transparent),transparent 70%);animation:dr 14s ease-in-out infinite alternate}
+@keyframes dr{to{transform:translateY(18px) scale(1.05)}}
+.pg{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));z-index:11}
+.tg{margin-left:auto;flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:16px;cursor:pointer}
+.tg:hover{background:var(--hi)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:13px;font-weight:700;margin:0 0 18px}
+.pill i{width:8px;height:8px;border-radius:50%;background:#2f9e6b;animation:pl 1.8s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(47,158,107,.55)}100%{box-shadow:0 0 0 8px rgba(47,158,107,0)}}
+.stp{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;counter-reset:s}
+.stp button{counter-increment:s;font:600 14px Manrope,sans-serif;color:var(--ink);padding:7px 15px 7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);cursor:pointer;transition:background .2s,transform .2s}
+.stp button::before{content:counter(s);display:inline-grid;place-items:center;width:20px;height:20px;margin-right:8px;border-radius:50%;background:var(--hi);font-size:11px}
+.stp button:hover{transform:translateY(-2px)}
+.stp button[aria-pressed="true"]{background:var(--acc2);border-color:var(--acc2);color:var(--surface)}
+.stp button[aria-pressed="true"]::before{background:var(--surface);color:var(--acc2)}
+.pnl{margin-top:14px;padding:18px 22px;border-left:4px solid var(--acc);background:var(--surface);border-radius:0 14px 14px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:92px}
+.pnl b{display:block;font:600 1.15rem Fraunces,serif;margin-bottom:4px}
+.pnl span{color:var(--muted)}
+.card{transition:box-shadow .25s}
+.card:hover{box-shadow:0 22px 40px -24px rgba(29,36,51,.45)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.vis{opacity:1;transform:none}
+.js .card.vis:hover{transform:translateY(-5px)}
+.js .card .bar.a{transform-origin:left;transform:scaleX(0);transition:transform 1.1s cubic-bezier(.2,.7,.2,1) .35s}
+.js .card.vis .bar.a{transform:scaleX(1)}
+@media(prefers-reduced-motion:reduce){.aurora,.pill i{animation:none}.js .rv,.js .card .bar.a{opacity:1;transform:none;transition:none}.js .card.vis:hover{transform:none}}
 </style>
 </head>
 <body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="pg" id="pg"></div>
 <nav><div>
 <a class="mono" href="#top" aria-label="Top">KB</a>
 <a href="#about">About</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+<button class="tg" id="tg" type="button" aria-label="Switch light or dark theme">◐</button>
 </div></nav>
 
 <main class="wrap" id="top">
 <div class="hero in">
 <div>
+<p class="pill"><i></i>Open to project management roles</p>
 <p class="eyebrow">Karthik Balaji V · Project Manager</p>
 <h1>I keep complex projects <em>calm</em>, clear and moving.</h1>
 <p class="lead">Hi, I’m Karthik. At CountAI I lead about 10 people across ML Ops, service engineering and dispatch to deliver AI-based defect detection to 65 factories. I find what slows a team down, get it fixed, and make sure it sticks.</p>
@@ -104,10 +135,10 @@ footer{padding:28px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 </div>
 
 <div class="stats in">
-<div><b>468</b><span>machines supported</span></div>
-<div><b>65</b><span>factories</span></div>
-<div><b>~10</b><span>people led</span></div>
-<div><b>87%</b><span>less daily troubleshooting</span></div>
+<div><b data-n="468">468</b><span>machines supported</span></div>
+<div><b data-n="65">65</b><span>factories</span></div>
+<div><b data-n="10" data-pre="~">~10</b><span>people led</span></div>
+<div><b data-n="87" data-suf="%">87%</b><span>less daily troubleshooting</span></div>
 </div>
 
 <section id="about">
@@ -117,7 +148,9 @@ footer{padding:28px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 <p>I manage delivery and post-deployment support for an AI-based fabric defect-detection and real-time monitoring product, from the first task to customer handover. I work with Software, R&amp;D, ML Ops and Service teams, turn customer requests into scoped, dated tasks, and raise risks early.</p>
 <p>My background is in mechatronics engineering and production management, so I’m comfortable with engineering conversations and with the pressure of live factory floors. What I enjoy most is replacing manual, repeated work with a process that runs without me.</p>
 </div>
-<ol class="steps"><li>Identify</li><li>Define</li><li>Prioritize</li><li>Coordinate</li><li>Follow up</li><li>Validate</li><li>Adopt</li><li>Measure</li></ol>
+<p class="sub" style="margin:26px 0 0">My eight-step improvement cycle. Tap a step.</p>
+<div class="stp" id="stp" role="group" aria-label="Improvement cycle"><button type="button" aria-pressed="true">Identify</button><button type="button" aria-pressed="false">Define</button><button type="button" aria-pressed="false">Prioritize</button><button type="button" aria-pressed="false">Coordinate</button><button type="button" aria-pressed="false">Follow up</button><button type="button" aria-pressed="false">Validate</button><button type="button" aria-pressed="false">Adopt</button><button type="button" aria-pressed="false">Measure</button></div>
+<div class="pnl" id="pnl" aria-live="polite"></div>
 </section>
 
 <section id="work">
@@ -182,5 +215,25 @@ footer{padding:28px 0 48px;text-align:center;color:var(--muted);font-size:.85rem
 </div>
 <footer>Karthik Balaji V · Salem, Tamil Nadu, India</footer>
 </main>
+<script>
+document.documentElement.classList.add("js");
+(function(){
+var r=document.documentElement,mq=matchMedia("(prefers-color-scheme: dark)"),rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+try{var t=localStorage.getItem("th");if(t)r.dataset.theme=t}catch(e){}
+document.getElementById("tg").onclick=function(){var n=(r.dataset.theme||(mq.matches?"dark":"light"))==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("th",n)}catch(e){}};
+var pg=document.getElementById("pg");
+function sc(){var h=r.scrollHeight-innerHeight;pg.style.width=(h>0?scrollY/h*100:0)+"%"}
+addEventListener("scroll",sc,{passive:true});sc();
+var D={Identify:"Spot repeated manual work and recurring issues while running day-to-day delivery.",Define:"Turn the problem into clear requirements, such as the troubleshooting module for false-positive and false-negative cases.","Prioritize":"Use Pareto-style analysis to pick the issues with the highest impact first.",Coordinate:"Align Software, R&D, ML Ops and Service on who builds what, and by when.","Follow up":"Track blockers and dependencies through sprints, stand-ups and weekly reviews.",Validate:"Check the fix against real machines and real cases before it goes live.",Adopt:"Get the team using it every day, like the dashboard that about 6 people now use independently.",Measure:"Compare before and after, such as 4 hours down to 30 minutes of troubleshooting a day."};
+var pnl=document.getElementById("pnl"),bs=document.querySelectorAll("#stp button");
+function show(b){bs.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});var n=b.textContent;pnl.innerHTML="<b></b><span></span>";pnl.firstChild.textContent=n;pnl.lastChild.textContent=D[n]}
+bs.forEach(function(b){b.onclick=function(){show(b)}});show(bs[0]);
+function cnt(el){var n=+el.dataset.n,p=el.dataset.pre||"",s=el.dataset.suf||"";if(rm){el.textContent=p+n+s;return}var t0,f=function(t){t0=t0||t;var k=Math.min((t-t0)/1200,1);el.textContent=p+Math.round(n*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+var els=document.querySelectorAll(".card,.job,.stats div,.board,.pnl,h2,.chips span,.two>*");
+if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("vis")});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;el.classList.add("vis");io.unobserve(el);var b=el.querySelector&&el.querySelector("b[data-n]");if(b)cnt(b);setTimeout(function(){el.style.transitionDelay=""},1500)})},{threshold:.15});
+els.forEach(function(e,i){e.classList.add("rv");e.style.transitionDelay=(i%4)*90+"ms";io.observe(e)});
+})();
+</script>
 </body>
 </html>
